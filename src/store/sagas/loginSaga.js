@@ -47,7 +47,8 @@ export function* userLogInFlow() {
 export function* watchLogOutFlow() {
   while (true) {
     yield take(constants.LOGOUT_USER_SUCCESS);
-    Cookies.remove("routesAuthToken");
+    Cookies.remove("USER_ROLE");
+    Cookies.remove("ROUTES_AUTH_TOKEN");
   }
 }
 
