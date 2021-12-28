@@ -11,9 +11,7 @@ class PubSub {
 
   publish = (eventName, ...result) => {
     const event = this.obj[eventName];
-    if (event) {
-      event.forEach(cb => cb(...result));
-    }
+    event && event.forEach(cb => cb(...result));
   };
 }
 
